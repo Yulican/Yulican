@@ -5,6 +5,7 @@
  */
 package DC;
 
+import java.util.Random;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
@@ -22,4 +23,14 @@ public class Main extends Application{
     public void start(Stage primaryStage) throws Exception {
         
     }
+    
+   public String[][] setMap(int x,int y){
+       Random rd = new Random();
+       String[][] map = new String[x][y];
+       
+       
+       
+       return map;
+   } 
+    
 }
