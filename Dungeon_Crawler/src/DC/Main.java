@@ -14,6 +14,8 @@ import javafx.stage.Stage;
  * @author Yulican
  */
 public class Main extends Application{
+    private static boolean [][] map;
+    private static String [][] textures;
     
     public static void main(String[] args) {
         launch(args);
@@ -32,5 +34,14 @@ public class Main extends Application{
        
        return map;
    } 
+   
+   private void q3x4(int x, int y){
+      for(int i=0;i<=4;i++){
+          for(int j=0;i<=3;j++){
+              map[x+i][y+j]= true;
+          }
+      }
+      
+   }
     
 }
