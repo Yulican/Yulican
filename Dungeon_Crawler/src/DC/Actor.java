@@ -21,12 +21,12 @@ public abstract class Actor {
     private int dex;
     private int str;
     private int kon;
-    
-    public Actor(){
-        wis=8;
-        dex=8;
-        str=8;
-        kon=8;
+
+    public Actor() {
+        wis = 8;
+        dex = 8;
+        str = 8;
+        kon = 8;
     }
 
     abstract void sethp(int kon);
@@ -74,5 +74,41 @@ public abstract class Actor {
     public int getKon() {
         return kon;
     }
-    
+
+    public void setHp(int hp) {
+        this.hp = hp;
+    }
+
+    public void setMp(int mp) {
+        this.mp = mp;
+    }
+
+    public void setDg(int dg) {
+        this.dg = dg;
+    }
+
+    public void setDm(int dm) {
+        this.dm = dm;
+    }
+
+    public void setAm(int am) {
+        this.am = am;
+    }
+
+    public void setWis(int wis) {
+        this.wis = wis;
+    }
+
+    public void setDex(int dex) {
+        this.dex = dex;
+    }
+
+    public void setStr(int str) {
+        this.str = str;
+    }
+
+    public void setKon(int kon) {
+        this.kon = kon;
+    }
+
 }
