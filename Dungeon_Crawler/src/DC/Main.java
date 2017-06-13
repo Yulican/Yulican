@@ -35,9 +35,9 @@ public class Main extends Application{
        return map;
    } 
    
-   private void q3x4(int x, int y){
-      for(int i=0;i<=4;i++){
-          for(int j=0;i<=3;j++){
+   private void path(int l, int b,int x, int y){
+      for(int i=0;i<=l;i++){
+          for(int j=0;i<=b;j++){
               map[x+i][y+j]= true;
           }
       }
