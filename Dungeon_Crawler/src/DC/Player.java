@@ -28,7 +28,7 @@ public class Player extends Actor{
 
     @Override
     void setdm(int str) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        super.setDg((int)(super.getDg()*Math.PI));
     }
 
     @Override
