@@ -13,17 +13,17 @@ public class Player extends Actor{
 
     @Override
     void sethp(int kon) {
-        
+        super.setHp((int) (kon*Math.PI));
     }
 
     @Override
     void setmp(int wis) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        super.setMp(wis);
     }
 
     @Override
     void setdg(int dex) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        super.setDg((int)(55/(1+(55-1)*Math.pow(Math.E,((Math.log1p((55/27+1)/54)/50)*super.getDex())))));
     }
 
     @Override
@@ -35,5 +35,16 @@ public class Player extends Actor{
     void setam(int e) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
+    @Override
+    void setmaxhp(int hp) {
+        super.setMaxhp((int)(super.getKon()*Math.PI));
+    }
+
+    @Override
+    void setmaxmp(int mp) {
+       super.setMaxmp((int)(super.getWis()*Math.E));
+    }
+
+
 }

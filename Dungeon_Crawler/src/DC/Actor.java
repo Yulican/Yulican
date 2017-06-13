@@ -16,6 +16,9 @@ public abstract class Actor {
     private int dg;
     private int dm;
     private int am;
+    
+    private int maxhp;
+    private int maxmp;
 
     private int wis;
     private int dex;
@@ -28,6 +31,26 @@ public abstract class Actor {
         str = 8;
         kon = 8;
     }
+
+    public int getMaxhp() {
+        return maxhp;
+    }
+
+    public void setMaxhp(int maxhp) {
+        this.maxhp = maxhp;
+    }
+
+    public int getMaxmp() {
+        return maxmp;
+    }
+
+    public void setMaxmp(int maxmp) {
+        this.maxmp = maxmp;
+    }
+    
+    abstract void setmaxhp(int hp);
+    
+    abstract void setmaxmp(int mp);
 
     abstract void sethp(int kon);
 
@@ -109,6 +132,10 @@ public abstract class Actor {
 
     public void setKon(int kon) {
         this.kon = kon;
+    }
+
+    void setMaxmp(int i, int i0) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
