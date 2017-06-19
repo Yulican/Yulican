@@ -14,15 +14,18 @@ import javafx.stage.Stage;
  * @author Yulican
  */
 public class Main extends Application{
-    private static final int fieldX =126;
+    private  static final int fieldX =126;
     private static final int fieldY = 126;
     private static boolean [][]map = new boolean[fieldX][fieldY];
-    private static String [][] textures;
-    Random rng = new Random();
+    private  static String [][] textures;
+     static Random  rng = new Random();
     
     public static void main(String[] args) {
+        setMap();
+        showMap();
         
-        launch(args);
+        
+        //launch(args);
     }
 
     @Override
@@ -30,11 +33,51 @@ public class Main extends Application{
         
     }
     
-   public void setMap(int x,int y){
+    private static void showMap(){
+        for (int i = 0; i < fieldX; i++) {
+            for (int j = 0; j < fieldY; j++) {
+                if(map[i][j]){
+                    System.out.printf("O");
+                }else{
+                    System.out.printf("#");
+                }
+            }
+            System.out.println(" ");
+        }
+    }
+    
+   public static void setMap(){
+        int x = rng.nextInt(fieldX);
+        int y = rng.nextInt(fieldY);
+        map[x][y]= true;
+        boolean t=true;
         
+        for(int i = 0; i<100;i++){
+            t=true;
+            if(rng.nextBoolean()){
+                do{
+                   x = rng.nextInt(fieldX-20);
+                   y = rng.nextInt(fieldY-20);
+                   
+                       path(rng.nextInt(12)+5,x,y);
+                       t=false;
+                   
+                }while(t);
+                
+            }else{
+                do{
+                   x = rng.nextInt(fieldX-20);
+                   y = rng.nextInt(fieldY-20);
+                   
+                       room(rng.nextInt(8)+1,rng.nextInt(8)+1,x,y);
+                       t=false;
+                   
+                }while(t);
+            }
+        }
    } 
    
-   private void path(int l,int x, int y){
+   private  static void path(int l,int x, int y){
        if(l<0){
            throw new IllegalArgumentException("Path-length can't be negativ");
        }
@@ -63,7 +106,7 @@ public class Main extends Application{
       
    }
    
-   private void room(int l,int b, int x, int y){
+   private  static void room(int l,int b, int x, int y){
        if(l<0 || b<0){
            throw new IllegalArgumentException("Room-size can't be negativ, fucking Turd");
        }
