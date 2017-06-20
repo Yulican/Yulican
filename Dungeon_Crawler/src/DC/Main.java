@@ -52,26 +52,26 @@ public class Main extends Application{
         map[x][y]= true;
         boolean t=true;
         
-        for(int i = 0; i<100;i++){
+        for(int i = 0; i<10;i++){
             t=true;
-            if(rng.nextBoolean()){
+            if(rng.nextInt(100)>20){
                 do{
-                   x = rng.nextInt(fieldX-20);
-                   y = rng.nextInt(fieldY-20);
-                   
+                   x = rng.nextInt(fieldX-20)+10;
+                   y = rng.nextInt(fieldY-20)+10;
+                   if(map[x][y]){
                        path(rng.nextInt(12)+5,x,y);
                        t=false;
-                   
+                   }
                 }while(t);
                 
             }else{
                 do{
-                   x = rng.nextInt(fieldX-20);
-                   y = rng.nextInt(fieldY-20);
-                   
+                   x = rng.nextInt(fieldX-20)+10;
+                   y = rng.nextInt(fieldY-20)+10;
+                   if(map[x][y]){
                        room(rng.nextInt(8)+1,rng.nextInt(8)+1,x,y);
                        t=false;
-                   
+                   }
                 }while(t);
             }
         }
@@ -83,8 +83,8 @@ public class Main extends Application{
        }
       boolean t = rng.nextBoolean();
       boolean des =rng.nextBoolean();
-      for(int i=0;i<=l;i++){
-          if(rng.nextInt(100)>15){
+      for(int i=1;i<=l;i++){
+          if(rng.nextInt(100)>1){
              t = rng.nextBoolean();
              des = rng.nextBoolean();
           }
@@ -101,7 +101,12 @@ public class Main extends Application{
                   y++;
               }
           }
-          map[x][y]=true;
+          if(map[x][y]){
+              i--;
+          }else{
+              map[x][y]=true;
+          }
+          
       }
       
    }
